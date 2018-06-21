@@ -4,12 +4,8 @@ snoogans v 0.5
 Features:
 ---------
 
-	- updated to work with patch 1.13d
+	- testing update to work with patch 1.14d
 
-
-NOTE: Do NOT use the configure script, it is broken in its current form. To 
-compile a binary for the latest version (1.13d) run make without configuring 
-beforehand. Be advised that you should use snoogans v 0.4 for older versions.
 
 
 
