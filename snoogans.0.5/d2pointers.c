@@ -29,58 +29,58 @@ enum { MODULE_D2CLIENT, MODULE_D2COMMON, MODULE_D2GFX, MODULE_D2LANG, MODULE_D2W
 
 #ifdef _VERSION_1_13d
 
-/* function pointers for version 1.13d */
+/* function pointers for version 1.14d */
 
 /* D2Client.dll */
 
-FUNC(unit_any *, __attribute__((stdcall)), D2CLIENT, get_player_unit, (), 0x613C0) // from McGod's list
-FUNC(void, __attribute__((stdcall)), D2CLIENT, reveal_automap_room, (room1 *room1, DWORD clip_flag, automap_layer *layer), 0x73160) // updated 
-FUNC(automap_layer *, __attribute__((regparm(3))), D2CLIENT, init_automap_layer, (DWORD layer_no), 0x733D0) // updated 
-FUNC(void, __attribute__((stdcall)), D2CLIENT, print_game_string, (ms_wchar_t *message, int color), 0x75EB0) // updated
-FUNC(DWORD, __attribute__((stdcall)), D2CLIENT, get_automap_size, (), 0x6FDD0) // updated
-FUNC(ms_wchar_t *, __attribute__((regparm(3))), D2CLIENT, get_unit_name, (unit_any *), 0x622E0) // updated
-FUNC(void, __attribute__((fastcall)), D2CLIENT, add_automap_cell, (automap_cell *cell, automap_cell **node), 0x71EA0) // updated
-FUNC(automap_cell *, __attribute__((fastcall)), D2CLIENT, new_automap_cell, (), 0x703C0) // updated
-FUNC(game_info *, __attribute__((stdcall)), D2CLIENT, get_game_info, (), 0x2BCE0) // updated
-FUNC(unit_any *, __attribute__((stdcall)), D2CLIENT, get_selected_unit, (), 0x17280) // updated
-FUNC(DWORD, __attribute__((regparm(3))), D2CLIENT, get_ui_var, (DWORD var_no), 0x17C50) // updated
-FUNC(DWORD, __attribute__((fastcall)), D2CLIENT, set_ui_var, (DWORD var_no, DWORD howset, DWORD unknown), 0x1C190) // updated
-FUNC(unit_any *, __attribute__((fastcall)), D2CLIENT, find_server_side_unit, (DWORD id, DWORD type), 0x620D0) // updated
+FUNC(unit_any *, __attribute__((stdcall)), D2CLIENT, get_player_unit, (), 0x63DD0) // from McGod's list
+FUNC(void, __attribute__((stdcall)), D2CLIENT, reveal_automap_room, (room1 *room1, DWORD clip_flag, automap_layer *layer), 0x58F40) // updated 
+FUNC(automap_layer *, __attribute__((regparm(3))), D2CLIENT, init_automap_layer, (DWORD layer_no), 0x58D40) // updated 
+FUNC(void, __attribute__((stdcall)), D2CLIENT, print_game_string, (ms_wchar_t *message, int color), 0x9E3A0) // updated
+FUNC(DWORD, __attribute__((stdcall)), D2CLIENT, get_automap_size, (), 0x5A710) // updated
+FUNC(ms_wchar_t *, __attribute__((regparm(3))), D2CLIENT, get_unit_name, (unit_any *), 0x64A60) // updated
+FUNC(void, __attribute__((fastcall)), D2CLIENT, add_automap_cell, (automap_cell *cell, automap_cell **node), 0x57B00) // updated
+FUNC(automap_cell *, __attribute__((fastcall)), D2CLIENT, new_automap_cell, (), 0x57C30) // updated
+FUNC(game_info *, __attribute__((stdcall)), D2CLIENT, get_game_info, (), 0x3A0438) // updated
+FUNC(unit_any *, __attribute__((stdcall)), D2CLIENT, get_selected_unit, (), 0x17280) // updated0x11C4D8
+FUNC(DWORD, __attribute__((regparm(3))), D2CLIENT, get_ui_var, (DWORD var_no), 0x538D0) // updated
+FUNC(DWORD, __attribute__((fastcall)), D2CLIENT, set_ui_var, (DWORD var_no, DWORD howset, DWORD unknown), 0x55F20) // updated
+FUNC(unit_any *, __attribute__((fastcall)), D2CLIENT, find_server_side_unit, (DWORD id, DWORD type), 0x639B0) // updated
 //FUNC(void, __attribute__((fastcall)), D2CLIENT, exit_game, (), 0x43870) // updated
-//FUNC(void, __attribute__((stdcall)), D2CLIENT, receive_packet, (BYTE *packet, size_t len), 0xD178) // updated
+FUNC(void, __attribute__((stdcall)), D2CLIENT, receive_packet, (BYTE *packet, size_t len), 0x12AEB0) // updated 1.14
 
 /* D2Gfx.dll */
 
-FUNC(void, __attribute__((stdcall)), D2GFX, draw_line, (int x1, int y1, int x2, int y2, DWORD color, DWORD unk), -10013) // updated
-FUNC(void, __attribute__((stdcall)), D2GFX, draw_rectangle, (int x1, int y1, int x2, int y2, DWORD color, DWORD trans), -10028) // updated
+FUNC(void, __attribute__((stdcall)), D2GFX, draw_line, (int x1, int y1, int x2, int y2, DWORD color, DWORD unk), 0xF6380) // updated
+FUNC(void, __attribute__((stdcall)), D2GFX, draw_rectangle, (int x1, int y1, int x2, int y2, DWORD color, DWORD trans), 0xF6300) // updated
 
 /* D2Win.dll */
 
-FUNC(DWORD, __attribute__((fastcall)), D2WIN, set_text_size, (DWORD size), -10047) // updated
-FUNC(void, __attribute__((fastcall)), D2WIN, draw_text, (ms_wchar_t *text, int x, int y, int color, DWORD unk), -10076) // updated
-FUNC(DWORD, __attribute__((fastcall)), D2WIN, get_text_width_file_no, (ms_wchar_t *text, int *width, DWORD *file_no), -10179) // updated
-FUNC(void, __attribute__((fastcall)), D2WIN, select_edit_box_text, (vaddr box, ms_wchar_t *text), -10020) // updated
-FUNC(void *, __attribute__((fastcall)), D2WIN, set_control_text, (vaddr box, ms_wchar_t *text), -10007) // updated
-FUNC(void, __attribute__((fastcall)), D2WIN, set_edit_box_proc, (vaddr box, int __attribute__((stdcall)) (*call_back)(vaddr, DWORD, DWORD)), -10157) // updated
+FUNC(DWORD, __attribute__((fastcall)), D2WIN, set_text_size, (DWORD size), 0x102EF0) // updated
+FUNC(void, __attribute__((fastcall)), D2WIN, draw_text, (ms_wchar_t *text, int x, int y, int color, DWORD unk), 0x102320) // updated
+FUNC(DWORD, __attribute__((fastcall)), D2WIN, get_text_width_file_no, (ms_wchar_t *text, int *width, DWORD *file_no), 0x102520) // updated
+FUNC(void, __attribute__((fastcall)), D2WIN, select_edit_box_text, (vaddr box, ms_wchar_t *text), 0xfdd00) // updated
+FUNC(void *, __attribute__((fastcall)), D2WIN, set_control_text, (vaddr box, ms_wchar_t *text), 0xFF5A0) // updated
+FUNC(void, __attribute__((fastcall)), D2WIN, set_edit_box_proc, (vaddr box, int __attribute__((stdcall)) (*call_back)(vaddr, DWORD, DWORD)), 0xFDAD0) // updated
 
 /* D2Lang.dll */
 
-FUNC(ms_wchar_t *, __attribute__((fastcall)), D2LANG, get_local_text, (DWORD local_text_no), -10004) // updated
+FUNC(ms_wchar_t *, __attribute__((fastcall)), D2LANG, get_local_text, (DWORD local_text_no), 0x124A30) // updated
 
 /* D2Net.dll */
 
-//FUNC(void, __attribute__((stdcall)), D2NET, send_packet, (size_t len, DWORD arg, BYTE *packet), -10015) // updated
-//FUNC(void, __attribute__((stdcall)), D2NET, receive_packet, (BYTE *packet, size_t len), -10001) // updated
+FUNC(void, __attribute__((stdcall)), D2NET, send_packet, (size_t len, DWORD arg, BYTE *packet), 0x12AE50) // updated
+FUNC(void, __attribute__((stdcall)), D2NET, receive_packet, (BYTE *packet, size_t len), 0x12AEB0) // updated
 
 /* D2Common.dll */
 
-FUNC(void, __attribute__((stdcall)), D2COMMON, add_room_data, (act *act, DWORD level_no, int x, int y, room1 *room1), -10890) // updated
-FUNC(void, __attribute__((stdcall)), D2COMMON, remove_room_data, (act *act, DWORD level_no, int x, int y, room1 *room1), -10208) // updated
-FUNC(automap_layer2 *, __attribute__((fastcall)), D2COMMON, get_layer, (DWORD level_no), -10087) // updated
-FUNC(level *, __attribute__((fastcall)), D2COMMON, get_level, (act_misc *misc, DWORD level_no), -10283) // updated
-FUNC(void, __attribute__((stdcall)), D2COMMON, init_level, (level *level), -10736) // updated
-FUNC(object_txt *, __attribute__((stdcall)), D2COMMON, get_object_txt, (DWORD obj_no), -10319) // updated
-FUNC(DWORD, __attribute__((stdcall)), D2COMMON, get_unit_stat, (unit_any *unit, DWORD stat, DWORD stat2), -10550) // updated
+FUNC(void, __attribute__((stdcall)), D2COMMON, add_room_data, (act *act, DWORD level_no, int x, int y, room1 *room1), 0x21A070) // updated
+FUNC(void, __attribute__((stdcall)), D2COMMON, remove_room_data, (act *act, DWORD level_no, int x, int y, room1 *room1), 0x21A0C0) // updated
+FUNC(automap_layer2 *, __attribute__((fastcall)), D2COMMON, get_layer, (DWORD level_no), 0x21E470) // updated
+FUNC(level *, __attribute__((fastcall)), D2COMMON, get_level, (act_misc *misc, DWORD level_no), -0x242AE0) // updated
+FUNC(void, __attribute__((stdcall)), D2COMMON, init_level, (level *level), 0x2424A0) // updated
+FUNC(object_txt *, __attribute__((stdcall)), D2COMMON, get_object_txt, (DWORD obj_no), 0x240E90) // updated
+FUNC(DWORD, __attribute__((stdcall)), D2COMMON, get_unit_stat, (unit_any *unit, DWORD stat, DWORD stat2), 0x225480) // updated
 
 #undef FUNC
 
@@ -90,15 +90,15 @@ FUNC(DWORD, __attribute__((stdcall)), D2COMMON, get_unit_stat, (unit_any *unit, 
 
 VAR(automap_layer *, D2CLIENT, automap_layer, 0x11CF28) // updated
 VAR(automap_layer *, D2CLIENT, first_automap_layer, 0x11CF24) // updated 
-VAR(int, D2CLIENT, divisor, 0xF34F8) // from McGod's list
-VAR(POINT, D2CLIENT, offset, 0x11CF5C) // from McGod's list
-VAR(DWORD, D2CLIENT, automap_on, 0x11C8B8) // from McGod's list
-VAR(unit_any *, D2CLIENT, player_unit, 0x11D050) // from McGod's list
+VAR(int, D2CLIENT, divisor, 0x311254) // from McGod's list
+VAR(POINT, D2CLIENT, offset, 0x3A5198) // from McGod's list
+VAR(DWORD, D2CLIENT, automap_on, 0x3A27E8) // from McGod's list
+VAR(unit_any *, D2CLIENT, player_unit, 0x3A6A70) // from McGod's list
 //VAR(DWORD, D2CLIENT, ping, 0x108764) // from McGod's list
 
 /* D2Win.dll */
 
-VAR(DWORD, D2WIN, first_control, 0x8DB34) // from McGod's list
+VAR(DWORD, D2WIN, first_control, 0x3D55BC) // from McGod's list
 
 #undef VAR
 
