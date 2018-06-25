@@ -59,19 +59,38 @@ typedef struct
 hook
     hooks[] =
       {
+  
 
-#ifdef _VERSION_1_13d /* updated */
-            { i386_CALL, "D2Client.dll", 0x7349E, 5, draw_automap, NULL}, // updated
-            { i386_JUMP, "D2Client.dll", 0x1D7B4, 6, draw_ingame_STUB, NULL}, // updated
-            { i386_CALL, "D2Client.dll", 0x96736, 6, item_name_patch_STUB, NULL}, // updated
-            { i386_CALL, "D2Multi.dll", 0xB5E9, 5, next_game_name_patch, NULL}, // updated
-            { i386_CALL, "D2Multi.dll", 0xADAB, 5, next_game_name_patch, NULL}, // updated
-            { i386_CALL, "D2Client.dll", 0x997B2, 6, view_inventory_patch_1, NULL}, // updated
-            { i386_CALL, "D2Client.dll", 0x98E84, 6, view_inventory_patch_2, NULL}, // updated
-            { i386_CALL, "D2Client.dll", 0x97E3F, 5, view_inventory_patch_3, NULL}, // updated
+#ifdef _VERSION_1_14d /* updated */
+            { i386_CALL, "D2Client.dll", 0x626FE, 5, draw_automap, NULL}, /* updated 0x6FB126FE */
+            { i386_JUMP, "D2Client.dll", 0xC3DB4, 6, draw_ingame_STUB, NULL}, /* updated 0x6FB73DB4 */
+            { i386_CALL, "D2Client.dll", 0x92366, 6, item_name_patch_STUB, NULL}, /* updated 0x6FB42366 */
+            { i386_CALL, "D2Multi.dll", 0x14D29, 5, next_game_name_patch, NULL}, /* updated 0x6F9E4D29 */
+            { i386_CALL, "D2Multi.dll", 0x14A0B, 5, next_game_name_patch, NULL}, /* updated 0x6F9E4A0B */
+            { i386_CALL, "D2Client.dll", 0x953E2, 6, view_inventory_patch_1, NULL}, /* updated 0x6FB453E2 */
+            { i386_CALL, "D2Client.dll", 0x94AB4, 6, view_inventory_patch_2, NULL}, /* updated 0x6FB44AB4 */
+            { i386_CALL, "D2Client.dll", 0x93A6F, 5, view_inventory_patch_3, NULL}, /* updated 0x6FB43A6F */
+            { i386_CALL, "D2Client.dll", 0xACE61, 5, packet_received_STUB, NULL } /* updated 0x6FB5CE61 */
+            //{ i386_JUMP, "D2Client.dll", 0xD13C, 5, packet_sent_STUB, NULL } // updated 6FB662B1:  e8 86 6e f5 ff  call 0x6FABD13C
+  
+  
+FUNCPTR(D2NET, SendPacket, void __stdcall, (size_t aLen, DWORD arg1, BYTE* aPacket), 0x12AE50) //Updated 1.14d //0052AE50-BASE
+FUNCPTR(D2NET, ReceivePacket, void __fastcall, (BYTE *aPacket, DWORD aLen), 0x12AEB0) //Updated 1.14d //0052AEB0-BASE
+FUNCPTR(D2NET, ReceivePacket_I, void __fastcall, (BYTE *aPacket, DWORD aLen, int*arg3), 0x12B920) //Updated 1.14d //0052B920-BASE
+
+
+/*#ifdef _VERSION_1_13d /* updated *
+         //   { i386_CALL, "D2Client.dll", 0x7349E, 5, draw_automap, NULL}, // updated
+          //  { i386_JUMP, "D2Client.dll", 0x1D7B4, 6, draw_ingame_STUB, NULL}, // updated
+          //  { i386_CALL, "D2Client.dll", 0x96736, 6, item_name_patch_STUB, NULL}, // updated
+         //   { i386_CALL, "D2Multi.dll", 0xB5E9, 5, next_game_name_patch, NULL}, // updated
+         //   { i386_CALL, "D2Multi.dll", 0xADAB, 5, next_game_name_patch, NULL}, // updated
+         //   { i386_CALL, "D2Client.dll", 0x997B2, 6, view_inventory_patch_1, NULL}, // updated
+         //   { i386_CALL, "D2Client.dll", 0x98E84, 6, view_inventory_patch_2, NULL}, // updated
+         //   { i386_CALL, "D2Client.dll", 0x97E3F, 5, view_inventory_patch_3, NULL}, // updated
             //{ i386_CALL, "D2Client.dll", 0x83301, 5, packet_received_STUB, NULL }, // updated 0x6FB33301
             //{ i386_JUMP, "D2Client.dll", 0xD13C, 5, packet_sent_STUB, NULL } // updated 6FB662B1:  e8 86 6e f5 ff  call 0x6FABD13C
-
+*/
 #elif defined _VERSION_1_13c /* updated */
             { i386_CALL, "D2Client.dll", 0x626FE, 5, draw_automap, NULL}, /* updated 0x6FB126FE */
             { i386_JUMP, "D2Client.dll", 0xC3DB4, 6, draw_ingame_STUB, NULL}, /* updated 0x6FB73DB4 */
