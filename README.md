@@ -1,6 +1,6 @@
 # D2-Maphack-for-Linux
 These are a collection of programs that can be used to reveal the maps in Diablo 2 LOD
-version 1.13d running under Wine. The maphack included does a number of other things
+version 1.14d running under Wine. The maphack included does a number of other things
 like displaying the item level of dropped items as well as displaying monsters and attacks
 in the map.
 
