@@ -47,7 +47,7 @@ typedef struct game_info game_info;
 typedef struct bnet_data bnet_data;
 typedef struct player_data player_data;
 
-#ifdef _VERSION_1_13
+#ifdef _VERSION_1_14
 
 /*
  * structs for version 1.13c
